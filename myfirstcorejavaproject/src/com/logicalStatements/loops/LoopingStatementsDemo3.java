@@ -1,7 +1,7 @@
 package com.logicalStatements.loops;
 
 // write a program to print 1 to 100 even numbers using for loop
-public class LoopsDemo3 {
+public class LoopingStatementsDemo3 {
 
 	public static void main(String[] args) {
 		System.out.println("main method started");

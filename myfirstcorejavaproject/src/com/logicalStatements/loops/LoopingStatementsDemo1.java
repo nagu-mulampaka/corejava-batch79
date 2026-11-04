@@ -1,7 +1,7 @@
 package com.logicalStatements.loops;
 
 // write a program to print 0 to 10 numbers using for loop
-public class LoopsDemo1 {
+public class LoopingStatementsDemo1 {
 
 	public static void main(String[] args) {
 		System.out.println("main method started");
