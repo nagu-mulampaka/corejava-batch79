@@ -24,6 +24,7 @@ public class LoopingStatementsDemo12 {
 		System.out.println("main method started");
 		Scanner scanner = new Scanner(System.in);
 
+		// System.out.println(Math.sqrt(9));
 		System.out.print("Enter a number upto where you want to print: ");
 		int number = scanner.nextInt();
 
@@ -32,6 +33,7 @@ public class LoopingStatementsDemo12 {
 				System.out.print(i + " ");
 			}
 		}
+		scanner.close();
 	}
 
 }
