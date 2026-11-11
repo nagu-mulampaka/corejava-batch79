@@ -31,6 +31,7 @@ public class AccessModifiersDemo1 {
 		System.out.println("Static Block Called");
 	}
 	
+	// In Java, If we want to achieve singleton design pattern, the first step is constructor must be private.
 	// By using private constructor, we can stop the object creation, outside of the classes.
 	// private constructors can help to singleton design pattern.
 	// private AccessModifiersDemo1() {
