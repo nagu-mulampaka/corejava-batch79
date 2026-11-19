@@ -2,29 +2,44 @@ package com.oops.inheritance2;
 
 import java.util.Scanner;
 
-public class LoanImpl {
+// super class or parent class or base class
+public class LoanImpl implements Loan{
 	
 	Scanner scanner = new Scanner(System.in);
+	
+	public void hello() {
+		System.out.println("Hello Guys Good Morning");
+		System.out.println("Hello Method from Loan Impl");
+	}
+	
+	Number welcome(String name) {
+		System.out.println("Welcome to Vcube Bank Mr.  " + name);
+		return 10;
+	}
 
-	double getCustomerSalary() {
+	@Override
+	public double getCustomerSalary() {
 		System.out.print("Enter your Salary: ");
 		double salary = scanner.nextDouble();
 		return salary;
 	}
 
-	int getCustomerAgeInfo() {
+	@Override
+	public int getCustomerAgeInfo() {
 		System.out.print("Enter your age: ");
 		int age = scanner.nextInt();
 		return age;
 	}
 
-	int getCibilScore() {
+	@Override
+	public int getCibilScore() {
 		System.out.print("Enter your Cibil Score: ");
 		int cibil = scanner.nextInt();
 		return cibil;
 	}
 
-	double getRateOfInterest() {
+	@Override
+	public double getRateOfInterest() {
 		double roi = 20.0;
 		int cibil = getCibilScore();
 		if (cibil > 900 || cibil < 300) {
@@ -47,7 +62,8 @@ public class LoanImpl {
 		return roi;
 	}
 
-	boolean isAadharValid() {
+	@Override
+	public boolean isAadharValid() {
 		boolean isValid = false;
 		System.out.print("Enter your Aadhar Card Number: ");
 		String aadhar = scanner.next();
@@ -56,7 +72,8 @@ public class LoanImpl {
 	}
 
 	// ABCDE1234G
-	boolean isPanValid() {
+	@Override
+	public boolean isPanValid() {
 		boolean isValid = false;
 		System.out.print("Enter PAN Number: ");
 		String pan = scanner.next();
@@ -64,7 +81,8 @@ public class LoanImpl {
 		return isValid;
 	}
 
-	boolean isPhoneValid() {
+	@Override
+	public boolean isPhoneValid() {
 		boolean isValid = false;
 		System.out.print("Enter Phone Number Here: ");
 		String phone = scanner.next();
