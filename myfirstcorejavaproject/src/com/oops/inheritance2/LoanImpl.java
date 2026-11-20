@@ -3,16 +3,20 @@ package com.oops.inheritance2;
 import java.util.Scanner;
 
 // super class or parent class or base class
-public class LoanImpl implements Loan{
-	
+public class LoanImpl implements Loan {
+
 	Scanner scanner = new Scanner(System.in);
-	
+
+	private void info() {
+		System.out.println("Loan Impl");
+	}
+
 	public void hello() {
 		System.out.println("Hello Guys Good Morning");
 		System.out.println("Hello Method from Loan Impl");
 	}
-	
-	Number welcome(String name) {
+
+	protected Number welcome(String name) throws Throwable {
 		System.out.println("Welcome to Vcube Bank Mr.  " + name);
 		return 10;
 	}
@@ -89,6 +93,5 @@ public class LoanImpl implements Loan{
 		isValid = phone.matches("[6-9]{1}[0-9]{9}");
 		return isValid;
 	}
-
 
 }

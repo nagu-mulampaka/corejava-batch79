@@ -43,8 +43,55 @@ public class HomeLoan extends LoanImpl {
 	/// Parent --> Object -----> Child --> Number/String .... or any
 	/// Parent --> String -----> Child --> String ....
 	
+    ///	Rule 3 : Method Access Modifiers Scope should not be reduced.
+    /// Note : If the Parent method returns Highest Scope, the Child should not be lowest scope 
+    /// otherwise we will get the CE : Cannot reduce the visibility of the inherited method from LoanImpl
+    /// Example 1 : If the Parent class method scope is public --> child class method scope must be public
+    /// Example 2 : If the Parent class method scope is protected --> child class method scope can be protected/public
+    /// Example 3 : If the Parent class method scope is default --> child class method scope can be default/protected/public
+    /// Example 4 : If the Parent class method scope is private --> we cannot Override.
+    /// private <-- <default> <-- protected <-- public
+    
+    /// Rule 4 : private methods cannot Override it into child class, because the scope of private is within the class.
+    /// Note : If the Parent method is private, the same method we can write it into child class is not a problem until we use @Override
+    /// if we use @Override then it is Compile time error.
+    /// CE: The method info() of type HomeLoan must override or implement a supertype method
+
+    /// Rule 5 : static methods cannot override into child classes. 
+    /// Because static methods are loading at class loading time But Overriding is happening at Runtime Object Creations.
+    /// Note : If the Parent class static methods can write it into child class will not give any errors.until we use @Override annotation.
+    /// If we use @Override for static methods then it is Compile time error.
+    /// CE : The method main(String[]) of type TestB must override or implement a supertype method
+    /// Writing the same static method from parent to child will consider as method Hiding.
+
+    /// Rule 6 : final methods cannot override it into child class.
+    /// Note : final is a keyword to 
+    ///        stop inheritance for classes, 
+    ///        stop Method overriding for methods, 
+    ///        stop re-assiging the values of a variables.
+    /// Note : If the class is final all methods inside class also final.
+    ///        If the class is final all variables inside that class are not final.
+    /// Note : final methods can call in different class but we cannot override.
+
+    /// Rule 7 : Exception Handling 
+    /// If the parent class method throws any exceptions the child class not need to throws any exceptions.
+    /// But, If the Child class method throws any exception then, 
+    /// the Parent Class method must throw the same Exception or it's Parent Exception (Throwable).
+    /// CE : Exception Exception is not compatible with throws clause in LoanImpl.welcome(String)
+    /// Q) What is Exception Propagation.
+
+    /// Rule 8 : Abstract Method Related
+    /// If the Parent is interface or abstract class which may contains abstract methods 
+    /// then the child class must override the abstract methods from Parent.
+    /// Similarly, if the class contains normal method, 
+    /// those normal methods can also override it as abstract methods if the child class is abstract.
+    
+	private void info() {
+		System.out.println("Home Loan Impl");
+	}
+	
 	@Override
-	Integer welcome(String name) {
+	 public Integer welcome(String name) throws Exception{
 		System.out.println("Welcome to Vcube Bank Mr.  " + name);
 		return 100;
 	}
