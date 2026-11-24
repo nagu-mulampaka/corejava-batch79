@@ -14,7 +14,7 @@ public class HomeLoan extends LoanImpl {
 	 * Polymorphism is Divided into two types 
 	 * i) Method Overriding or Dynamic Polymorphism -> Run-time Polymorphism or Late Binding
 	 * ii) Method Overloading or static Polymorphism -> Compile-time Polymorphism or early Binding 
-	*//// ----------------------------------------------------------------------------------------------
+	*//// --------------------------------------------------------------------------------------------
 	
 	/*
 	 * i) Method Overriding or Dynamic Polymorphism Override Means : 
