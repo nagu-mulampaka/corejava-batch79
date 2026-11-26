@@ -1,6 +1,13 @@
 package com.abstraction;
 
 public class Monkey implements Animal{
+	
+	// Default methods are allowed only in interfaces.
+	// but, we can override in classes.
+	@Override
+	public void run() {
+		System.out.println("Monkey can also Jump !!");
+	}
 
 	@Override
 	public void sound() {

@@ -1,5 +1,6 @@
 package com.abstraction;
 
+// Driver Class
 public class TestAnimal {
 
 	public static void main(String[] args) {
@@ -17,6 +18,10 @@ public class TestAnimal {
         c.eat();
         c.walk();
         c.sleep();
+        c.run();
+        Animal.breath();
+        // This static method of interface Animal can only be accessed as Animal.breath
+        // c.breath();
         
         System.out.println("Dog Info ********************");
         Animal d = new Dog();
@@ -24,6 +29,8 @@ public class TestAnimal {
         d.eat();
         d.walk();
         d.sleep();
+        d.run();
+        Animal.breath();
         
         System.out.println("Monkey Info ********************");
         Animal m = new Monkey();
@@ -31,6 +38,8 @@ public class TestAnimal {
         m.eat();
         m.walk();
         m.sleep();
+        m.run();
+        Animal.breath();
 	}
 
 }
